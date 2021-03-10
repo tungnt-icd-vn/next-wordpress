@@ -6,6 +6,9 @@ export default function Header() {
       <Link href="/">
         <a className="hover:underline">Blog</a>
       </Link>
+       <Link href="/shop">
+        <a className="hover:underline" > Shop</a>
+      </Link>
       .
     </h2>
   )
