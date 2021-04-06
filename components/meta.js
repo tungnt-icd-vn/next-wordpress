@@ -1,7 +1,11 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
 
-export default function Meta() {
+export default function Meta(  
+  post_name,
+  post_description,
+  post_url,
+  post_image,
+  ) {
   return (
     <Head>
       <link
@@ -31,12 +35,18 @@ export default function Meta() {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
-      />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <link rel="alternate" type="application/rss+xml" href="/feed.xml" /> <meta title="titlexxx" content={post_name} />
+      <meta name="description" content={post_description}/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:url" content={post_url}/>
+      <meta property="og:title" content={post_name} />
+      <meta property="og:description" content={post_description}/>
+      <meta property="og:image" content={post_image}/>
+      <meta property="twitter:card" content="summary_large_image"/>
+      <meta property="twitter:url" content={post_url}/>
+      <meta property="twitter:title" content={post_name} />
+      <meta property="twitter:description" content={post_description}/>
+      <meta property="twitter:image" content={post_image}/>
     </Head>
   )
 }

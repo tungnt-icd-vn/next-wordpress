@@ -12,6 +12,7 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import Tags from '../../components/tags'
+import Metas from '../../components/meta'
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
@@ -39,6 +40,13 @@ export default function Post({ post, posts, preview }) {
                   content={post.featuredImage?.node?.sourceUrl}
                 />
               </Head>
+              <Metas
+                post_name={post.title}
+                post_description={post.excerpt}
+                post_url={post.title}
+                post_image={post.featuredImage?.node?.sourceUrl}
+              
+              />
               <PostHeader
                 title={post.title}
                 coverImage={post.featuredImage?.node}
